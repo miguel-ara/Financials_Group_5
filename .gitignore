@@ -1,0 +1,8 @@
+# Ignore Mac system files
+.DS-Store
+
+# Ignore all csv files
+*.csv
+
+# Ignore specific files
+./data
