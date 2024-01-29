@@ -13,6 +13,26 @@ Objective: Cover requirenents I, IX and X from the project proposal document.
 
 > **X.** Detailed and justified documentation is required explaining why a Big Data architecture has been employed.
 
-### Description
-[Still to be written]
+
+## Installation
+To install the required libraries, run the following command:
+```bash
+pip install -r requirements.txt
+```
+
+## Description
+This project arises from the need to optimize the company's Trading strategy, as the current one does not meet the minimum KPIs. The company conducts all its work in the U.S. stock market, focusing on the S&P 500. We are working in the Financial Sector, so we will focus on the companies that make up this sector. The data we will be using is from 2018 to 2024, and we will be using the data from Yahoo Finance.
+
+## Files
+#### main.py
+In this file, the functions for loading the data are stored. To use them you must use the following syntax:
+```bash
+python main.py <year> <format>
+```
+or:
+```bash
+python main.py <year>-<year> <format>
+```
+The first command will load the data for the specified year in the specified format. The second command will load the data for the specified range of years in the specified format.
+
   
