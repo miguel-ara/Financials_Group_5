@@ -2,4 +2,4 @@
 .DS-Store
 
 # Ignore specific files
-./data
+data/
