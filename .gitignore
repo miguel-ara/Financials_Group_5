@@ -3,3 +3,4 @@
 
 # Ignore specific files
 data/
+__pycache__/
