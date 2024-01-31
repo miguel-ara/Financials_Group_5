@@ -26,7 +26,7 @@ class Functions:
         Saves the DataFrame filtered by year to a CSV file.
         """
         os.makedirs(f"{self.path_out}/{self.year}", exist_ok=True)
-        return self.df[self.df.index.year == self.year].to_csv(f"{self.path_out}/{self.year}/data_{self.year}.csv", index=False)
+        return self.df[self.df.index.year == self.year].to_csv(f"{self.path_out}/{self.year}/data_{self.year}.csv")
 
 
     def df_to_parquet(self):
@@ -35,7 +35,7 @@ class Functions:
         """
         os.makedirs(f"{self.path_out}/{self.year}", exist_ok=True)
         return self.df[self.df.index.year == self.year].to_parquet(
-            f"{self.path_out}/{self.year}/data_{self.year}.parquet", index=False
+            f"{self.path_out}/{self.year}/data_{self.year}.parquet"
         )
 
 
@@ -105,7 +105,7 @@ class Functions:
         """
         os.makedirs(f"{self.path_out}/{self.year}", exist_ok=True)
         return self.df[self.df.index.year == self.year].to_excel(
-            f"{self.path_out}/{self.year}/data_{self.year}.xlsx", index=False
+            f"{self.path_out}/{self.year}/data_{self.year}.xlsx"
         )
 
 
