@@ -3,7 +3,7 @@ from functions import *
 
 
 
-def main(years: list[int, int], format: str) -> None:
+def main(years: list[int], format: str) -> None:
     """
     Main function to save the data to the desired format.
     """
