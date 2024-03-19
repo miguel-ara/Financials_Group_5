@@ -88,6 +88,7 @@ class Functions:
             return buffer.getvalue()
 
         os.makedirs(f"{self.path_out}/{self.year}", exist_ok=True)
+
         self.df.reset_index(inplace=True)
         self.df.index = self.df['Date']
         self.df['Date'] = self.df['Date'].astype(str)
@@ -140,6 +141,7 @@ def load_data(year: int, year2: int) -> pd.DataFrame:
         df2["CIK"] = companies["CIK"][i]
         df = pd.concat([df, df2])
     df.index = pd.to_datetime(df.index.strftime("%Y-%m-%d"))
+    df.columns = df.columns.str.replace(' ', '_')
     return df
 
 
