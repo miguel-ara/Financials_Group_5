@@ -34,6 +34,9 @@ class Functions:
         Saves the DataFrame filtered by year to a Parquet file.
         """
         os.makedirs(f"{self.path_out}/{self.year}", exist_ok=True)
+        self.df.reset_index(inplace=True)
+        self.df.index = self.df['Date']
+        self.df['Date'] = self.df['Date'].astype(str)
         return self.df[self.df.index.year == self.year].to_parquet(
             f"{self.path_out}/{self.year}/data_{self.year}.parquet"
         )
@@ -85,6 +88,9 @@ class Functions:
             return buffer.getvalue()
 
         os.makedirs(f"{self.path_out}/{self.year}", exist_ok=True)
+        self.df.reset_index(inplace=True)
+        self.df.index = self.df['Date']
+        self.df['Date'] = self.df['Date'].astype(str)
         with open(f"{self.path_out}/{self.year}/data_{self.year}.avro", "wb") as out:
             out.write(dataframe_to_avro(self.df[self.df.index.year == self.year]))
 
@@ -94,6 +100,9 @@ class Functions:
         Saves the DataFrame filtered by year to a JSON file.
         """
         os.makedirs(f"{self.path_out}/{self.year}", exist_ok=True)
+        self.df.reset_index(inplace=True)
+        self.df.index = self.df['Date']
+        self.df['Date'] = self.df['Date'].astype(str)
         return self.df[self.df.index.year == self.year].to_json(
             f"{self.path_out}/{self.year}/data_{self.year}.json", orient="records"
         )
@@ -104,8 +113,12 @@ class Functions:
         Saves the DataFrame filtered by year to a Excel file.
         """
         os.makedirs(f"{self.path_out}/{self.year}", exist_ok=True)
+        self.df.reset_index(inplace=True)
+        self.df.index = self.df['Date']
+        self.df['Date'] = self.df['Date'].astype(str)
         return self.df[self.df.index.year == self.year].to_excel(
-            f"{self.path_out}/{self.year}/data_{self.year}.xlsx"
+            f"{self.path_out}/{self.year}/data_{self.year}.xlsx",
+            index=False,
         )
 
 
