@@ -126,6 +126,7 @@ def load_data(year: int, year2: int) -> pd.DataFrame:
         df2["Ticker"] = companies["ticker"][i]
         df2["CIK"] = companies["CIK"][i]
         df = pd.concat([df, df2])
+    df.index = pd.to_datetime(df.index.strftime("%Y-%m-%d"))
     return df
 
 
