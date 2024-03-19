@@ -130,7 +130,7 @@ def load_data(year: int, year2: int) -> pd.DataFrame:
     return df
 
 
-def parse_args(argv: list) -> (list, str):
+def parse_args(argv: list) -> tuple[list[int], str]:
     """
     Parse arguments from command line.
     """
